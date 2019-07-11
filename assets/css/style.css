@@ -3,20 +3,29 @@ body {
     background-size: cover;
 }
 
-#startPage {
-    background-color: pink;
 
-}
-h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
+
+#gameHeader {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
     text-align: center;
     font-weight: bolder;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: white;
 }
-#activeGamePage {
 
+.btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0px;
+    margin: auto; 
+} 
+#activeGamePage {
+    vertical-align: middle;
+    display: none;
 }
 
 #activeArea {

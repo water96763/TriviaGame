@@ -1,52 +1,68 @@
 let startGame = document.getElementById("start");
-let quiz = document.getElementById("quiz");
+let game = document.getElementById("game");
 let question = document.getElementById("question");
 let imageForQuestion = document.getElementById("qImg");
-let choiceA = document.getElementById("A");
-let choiceB = document.getElementById("B");
-let choiceC = document.getElementById("C");
+let answerA = document.getElementById("A");
+let answerB = document.getElementById("B");
+let answerC = document.getElementById("C");
 let counter = document.getElementById("counter");
 let timeGauge = document.getElementById("timeGauge");
 let progress = document.getElementById("progress");
 let scoreDiv = document.getElementById("scoreContainer");
 
 let questions = [
-
-    {
-
-        question : "What does HTML stand for?",
-
+    {   question : "According to Va, how much toilt paper does one person ue a month?",
         imgSrc : "img/html.png",
-
-        choiceA : "Correct",
-
-        choiceB : "Wrong",
-
-        choiceC : "Wrong",
-
+        answerA : "Correct",
+        answerB : "Wrong",
+        answerC : "Wrong",
         correct : "A"
+    },
+]      
+        for (i=0; i <questionArray.length -1 , i++)
+        
+        
+        let lastQuestionIndex = questions.length - 1;
+        let currentQuestionIndex = 0;
 
-    },{
+start.addEventListener("click", startGame);
 
-        const lastQuestion = questions.length - 1;
+let timer;
 
-        let runningQuestion = 0;
+function startGame() {
+    start.style.display = "none";
+    timer = setInterval(counter, 2000);
+    askTheQuestion();
+    quiz.style.display = "block";
+}
 
         
-function renderQuestion(){
+function askTheQuestion(){
+    let q = questions[currentQuestionIndex];
+    question.innerHTML = "<p>" + q.question +"</p>";
+    qImg.innerHTML = "<img src=" + q.imgSrc +">";
+    answerA.innerHTML = q.answerA;
+    answerB.innerHTML = q.answerB;
+    answerC.innerHTML = q.answerC;
+    start.addEventListener("click",startGame);
 
-    let q = questions[runningQuestion];
+    askTheQuestion();
 
-   
+    function counter() {
+        if (currentQuestionIndex < lastQuestionIndex) {
+            currentQuestionIndex++;
+            askTheQuestion();
 
-    question.innerHTML = "<p>"+ q.question +"</p>";
+        }
+    }
 
-    qImg.innerHTML = "<img src="+ q.imgSrc +">";
 
-    choiceA.innerHTML = q.choiceA;
+function checkAnswer(answer) {
+    if (questions[currentQuestionIndex].correct == answer){
+        score++;
+    }
+    if(currentQuestionIndex < lastQuestionIndex) {
 
-    choiceB.innerHTML = q.choiceB;
-
-    choiceC.innerHTML = q.choiceC;
-    start.addEventListener("click",startQuiz);
+    }
+}
 setInterval

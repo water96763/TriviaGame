@@ -11,30 +11,37 @@
 </head>
 
 <body>
-    <div class = container id= startPage>
-        <h1>TRIVIA GAME!</h1>
-        <button>Click here to start game!</button>
-        <p id=activeArea></p>
-    </div>
+        <p id="gameHeader">TRIVIA GAME !</p>
+   
+        <div class="container" id="startPage">
+            <div class="container text-center" id="activeArea">
+                <div class="text-center"><button class="btn btn-lg btn-dark" type="button">Click here to start game!</button></div>
+            </div>
+        </div>
 
-    <!-- <div class = container id= activeGamePage>
-            <p class = container id=activeArea></p>
-            <div class="card" style="width: 500px">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some dafdsafdsafdsafsafafdsafdsafdsafdsafdadsfdsafdsafdsafdsafdsafdsafsafdsafsdafdsfa example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
+    <div class="container" id="activeGamePage">
+            <div class="container text-center" id="activeArea">
+                <div class="row text-center">
+                    <img src="..." class="" alt="...">
+                </div>
+                <div class="row">
+                    <p id="timer">Timer</p>
+                </div>
+                <div class="row">
+                <p id="question">Question</p>
+                </div>
+                <div>
+                   <p id="a" class="">A</p>
+                   <p id="b" class="">B</p>
+                   <p id="c" class="">C</p>
+                   <p id="answer"></p>
+                </div>
+            </div>
     </div>
 
     <div class = container id= gameEndPage>
-            <p id=activeArea></p>
-    </div>     -->
+            <div class="container text-center" id=activeArea></div>
+    </div>    
 
     <script src="assets/javascript/app.js"></script> 
 </body>
