@@ -1,0 +1,36 @@
+body {
+    background-image: url(../images/neurons.jpg);
+    background-size: cover;
+}
+
+#startPage {
+    background-color: pink;
+
+}
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#activeGamePage {
+
+}
+
+#activeArea {
+        background-color: white;
+        width: 800px;
+        height: 500px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+}
+
+#gameEndPage {
+
+}
