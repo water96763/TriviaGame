@@ -1,15 +1,13 @@
-let startGame = document.getElementById("start");
-let game = document.getElementById("game");
+let start = document.getElementById("btn");
+let game = document.getElementById("activeGamePage");
 let question = document.getElementById("question");
-let imageForQuestion = document.getElementById("qImg");
+let imageForQuestion = document.getElementById("questionImg");
 let answerA = document.getElementById("A");
 let answerB = document.getElementById("B");
 let answerC = document.getElementById("C");
-let counter = document.getElementById("counter");
-let timeGauge = document.getElementById("timeGauge");
-let progress = document.getElementById("progress");
-let scoreDiv = document.getElementById("scoreContainer");
-
+let timer = document.getElementById("timer");
+let answer = document.getElementById("answer");
+let timer;
 let questions = [
     {   question : "According to Va, how much toilt paper does one person ue a month?",
         imgSrc : "img/html.png",
@@ -18,35 +16,62 @@ let questions = [
         answerC : "Wrong",
         correct : "A"
     },
+    {   question : "According to Va, how much toilt paper does one person ue a month?",
+        imgSrc : "img/html.png",
+        answerA : "Correct",
+        answerB : "Wrong",
+        answerC : "Wrong",
+        correct : "A"
+    },
+    {   question : "According to Va, how much toilt paper does one person ue a month?",
+        imgSrc : "img/html.png",
+        answerA : "Correct",
+        answerB : "Wrong",
+        answerC : "Wrong",
+        correct : "A"
+    },
+    {   question : "According to Va, how much toilt paper does one person ue a month?",
+        imgSrc : "img/html.png",
+        answerA : "Correct",
+        answerB : "Wrong",
+        answerC : "Wrong",
+        correct : "A"
+    },
+    {   question : "According to Va, how much toilt paper does one person ue a month?",
+        imgSrc : "img/html.png",
+        answerA : "Correct",
+        answerB : "Wrong",
+        answerC : "Wrong",
+        correct : "A"
+    },
 ]      
-        for (i=0; i <questionArray.length -1 , i++)
+        for (i = 0; i < questionArray.length -1; i++) {
+
+        }
         
         
         let lastQuestionIndex = questions.length - 1;
         let currentQuestionIndex = 0;
 
-start.addEventListener("click", startGame);
-
-let timer;
+start.onclick = function() {startGame()};
 
 function startGame() {
-    start.style.display = "none";
-    timer = setInterval(counter, 2000);
+    timer = setInterval(counter, 100);
     askTheQuestion();
-    quiz.style.display = "block";
+ 
 }
 
         
 function askTheQuestion(){
     let q = questions[currentQuestionIndex];
     question.innerHTML = "<p>" + q.question +"</p>";
-    qImg.innerHTML = "<img src=" + q.imgSrc +">";
+    qImg.innerHTML = "<img src=" + q.imageForQuestion +">";
     answerA.innerHTML = q.answerA;
     answerB.innerHTML = q.answerB;
     answerC.innerHTML = q.answerC;
-    start.addEventListener("click",startGame);
+    start.onclick= function() {startGame};
 
-    askTheQuestion();
+   
 
     function counter() {
         if (currentQuestionIndex < lastQuestionIndex) {
