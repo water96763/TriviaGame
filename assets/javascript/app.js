@@ -9,63 +9,23 @@ let timer = document.getElementById("timer");
 let answer = document.getElementById("answer");
 let timer;
 
-function hideScreen() {
-    var x = document.getElementById("button");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-} 
+// function hideScreen() {
+//     var x = document.getElementById("button");
+//     if (x.style.display === "none") {
+//       x.style.display = "block";
+//     } else {
+//       x.style.display = "none";
+// } 
+$(document).on("click", "#button", function() {
+  //  startGame(); 
+  askTheQuestion();
+});
 
-start.onclick = function() {startGame()};
 
 function startGame() {
     timer = setInterval(counter, 100);
     askTheQuestion();
-    hideScreen ();
-
-    let questions = [
-    {   question : "According to Va, how much toilt paper does one person ue a month?",
-        imgSrc : "img/html.png",
-        answerA : "Correct",
-        answerB : "Wrong",
-        answerC : "Wrong",
-        correct : "A"
-    },
-    {   question : "According to Va, how much toilt paper does one person ue a month?",
-        imgSrc : "img/html.png",
-        answerA : "Correct",
-        answerB : "Wrong",
-        answerC : "Wrong",
-        correct : "A"
-    },
-    {   question : "According to Va, how much toilt paper does one person ue a month?",
-        imgSrc : "img/html.png",
-        answerA : "Correct",
-        answerB : "Wrong",
-        answerC : "Wrong",
-        correct : "A"
-    },
-    {   question : "According to Va, how much toilt paper does one person ue a month?",
-        imgSrc : "img/html.png",
-        answerA : "Correct",
-        answerB : "Wrong",
-        answerC : "Wrong",
-        correct : "A"
-    },
-    {   question : "According to Va, how much toilt paper does one person ue a month?",
-        imgSrc : "img/html.png",
-        answerA : "Correct",
-        answerB : "Wrong",
-        answerC : "Wrong",
-        correct : "A"
-    },
-]      
-        
-
-  
-let lastQuestionIndex = questions.length - 1;
-let currentQuestionIndex = 0;
+  //  hideScreen ();
 }
 
         
@@ -136,4 +96,3 @@ function askTheQuestion(){
                 score.innerHTML = "<p>" + score + "<p>";
             };
         };
-    }

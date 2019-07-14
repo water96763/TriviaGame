@@ -25,7 +25,7 @@ body {
 } 
 #activeGamePage {
     vertical-align: middle;
-    display: none;
+    /* display: none; */
 }
 
 #activeArea {
@@ -40,6 +40,3 @@ body {
         filter: alpha(opacity=50);
 }
 
-#gameEndPage {
-
-}
