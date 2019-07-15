@@ -13,35 +13,33 @@
 <body>
         <p id="gameHeader">TRIVIA GAME !</p>
    
-        <div class="container" id="startPage">
-            <div class="container text-center" id="activeArea">
-                <div class="text-center"><button class="btn btn-lg btn-dark" id="button" type="button">Click here to start game!</button></div>
+        <div class="container" id="page">
+            <div id="row" class="button-row">
+                <div class="text-center"><button class="btn btn-lg btn-dark" id="button" type="button">Click here to start game!</button>
+            </div>
+            <div id="game-over" class="game-over-row"></div>
+            <div class="game-over">Game Over</div> 
+
+            <div id ="row" class="timer-row"></div>
+            <div class="timer">Timer</div>
+        </div>
+        <div class="container" id="questionBank">
+            <div id="row" class="question-row">
+            <label class="option"><input type="radio" name="option" value="1" />1<span id="A"></span></label>
+            <label class="option"><input type="radio" name="option" value="2" />2<span id="B"></span></label>
+            <label class="option"><input type="radio" name="option" value="2" />3<span id="C"></span></label>
+            <p id="answer"></p>
             </div>
         </div>
 
-    <div class="container" id="activeGamePage">
-            <div class="container text-center" id="activeArea">
-                <div class="row text-center">
-                    <img src="..." class="" id="questionImage" alt="...">
-                </div>
-                <div class="row">
-                    <p id="timer">Timer</p>
-                </div>
-                <div class="row">
-                <p id="question">Question</p>
-                </div>
-                <div>
-                   <p id="A" class="">A</p>
-                   <p id="B" class="">B</p>
-                   <p id="C" class="">C</p>
-                   <p id="answer"></p>
-                </div>
-            </div>
-    </div>
+            <div id="row" class="correct-row"></div>
+            <div class="correctlyAnswered">Correct answers</div>
 
-    <div class = container id= gameEndPage>
-            <div class="container text-center" id=activeArea></div>
-    </div>    
+            <div id="row" class="wrong-row"></div>
+            <div class="wrongAnswer">Wrong answers</div>
+
+            
+        </div>
 
     <script src="assets/javascript/app.js"></script> 
 </body>

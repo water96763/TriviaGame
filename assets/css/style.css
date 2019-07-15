@@ -1,10 +1,12 @@
-body {
+/* body {
     background-image: url(../images/neurons.jpg);
     background-size: cover;
+} */
+/* 
+#countdown {
+    color: black;
 }
-
-
-
+*/
 #gameHeader {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 50px;
@@ -12,23 +14,50 @@ body {
     font-weight: bolder;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: white;
+    color: greenyellow;
 }
 
-.btn {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0px;
-    margin: auto; 
-} 
-#activeGamePage {
+
+.button-row {
+    background-color: yellow;
+}
+
+.game-over {
+    background-color: green;
+    text-align: center;
+}
+
+.timer {
+    background-color: red;
+    text-align: center;
+}
+
+.question-row {
+    background-color: pink;
+    height: 450px;
+    }
+
+.correctlyAnswered {
+    background-color: orange;
+    text-align: center;
+}
+#questionBank {
+    text-align: center;
+}
+.wrongAnswer {
+    background-color: blue;
+    text-align: center;
+}
+
+/* #page {
     vertical-align: middle;
+    color: pink;
+    font-weight: bolder;
+    background-color: blueviolet;
     /* display: none; */
-}
+/* } 
 
-#activeArea {
+/* #activeArea {
         background-color: white;
         width: 800px;
         height: 500px;
@@ -37,6 +66,6 @@ body {
         top: 50%;
         transform: translate(-50%, -50%);
         opacity: 0.5;
-        filter: alpha(opacity=50);
+        /* filter: alpha(opacity=50); 
 }
-
+  */
