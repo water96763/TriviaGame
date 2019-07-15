@@ -1,14 +1,16 @@
-let start = document.getElementById("button");
+let start = document.getElementById("btn");
 let game = document.getElementById("page");
-let question = document.getElementById("question-row");
+let question = document.getElementById("questionBank");
 let imageForQuestion = document.getElementById("questionImg");
 let answerA = document.getElementById("A");
 let answerB = document.getElementById("B");
 let answerC = document.getElementById("C");
 let timer = document.getElementById("timer-row");
-let answer = document.getElementById("answer");
-let gameOver = document.getElementById("game-over")
+let answer = document.getElementById("correct-row");
+let wrong = document.getElementById("wrong-row");
+let gameOver = document.getElementById("game-over-row");
 var timeleft = 120;
+
 // function hideScreen() {
 //     var x = document.getElementById("button");
 //     if (x.style.display === "none") {
@@ -58,17 +60,25 @@ function askTheQuestion()  {
         let currentQuestionIndex = 0;
             for (i = 0; i < questions.length -1; i++) {
                 let q = questions[currentQuestionIndex];
-//                 question.innerHTML = "<p>" + q.question +"</p>";
-//                 answerA.innerHTML = q.answerA;
-//                 answerB.innerHTML = q.answerB;
-//                 answerC.innerHTML = q.answerC;
-//             }
-//             if (currentQuestionIndex < lastQuestionIndex) {
-//                 currentQuestionIndex++;
-//                 askTheQuestion();
-//             }
-//             };
+                question.innerHTML = "<p>" + q.question +"</p>";
+                answerA.innerHTML = q.answerA;
+                answerB.innerHTML = q.answerB;
+                answerC.innerHTML = q.answerC;
+                
+            
+                if $(document).on("click", ".option" == questions[currentQuestionIndex].correct {
+                    correctanswer++
+                } 
+        
 
+            };
+};
+
+            }
+            else () {
+                displayScore();
+            }
+            
 //         function checkAnswer(answer) {
 //             if (questions[currentQuestionIndex].correct == answer){
 //                 score++;
@@ -80,6 +90,7 @@ function askTheQuestion()  {
 $(document).on("click", "#button", function() {
     askTheQuestion();
     hideScreen();
+    startTimer ()
   //   document.getElementById("startPage").style.visibility = "hidden";
   //   document.getElementById("activeGamePage").style.visibility ="visible";
     var downloadTimer = setInterval(function(){

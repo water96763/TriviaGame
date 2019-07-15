@@ -18,33 +18,35 @@
 }
 
 
-.button-row {
+#button-row {
     background-color: yellow;
+    text-align: center;
 }
 
-.game-over {
+#game-over-row {
     background-color: green;
-    text-align: center;
+
 }
 
-.timer {
+#timer-row {
     background-color: red;
-    text-align: center;
+
 }
 
-.question-row {
+#question-row {
     background-color: pink;
     height: 450px;
     }
 
-.correctlyAnswered {
+#correct-row {
     background-color: orange;
     text-align: center;
 }
-#questionBank {
+#question-row {
     text-align: center;
+    background-color: aqua;
 }
-.wrongAnswer {
+#wrong-row {
     background-color: blue;
     text-align: center;
 }
