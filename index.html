@@ -10,27 +10,28 @@
     <title>Trivia Game</title>
 </head>
 
-<body>
-        <h1 id="gameHeader">TRIVIA GAME !</h1>
-   
-        <div id="start" ></div>
-        <div id="quiz" style="display:none"></div>
-        <div id="qImage"> <img src="img.png"></div>
-        <div id="question"><p>QUestion</p></div>
-        <div id="timer"></div>
-        <div id="counter"> 6</div>
-        <div id="btimeGauge"></div>
-        <div id="timeGauge"></div>
-</div>
-        
-        <div id="choices"></div>
-        <div class="choice" id="A" onclick="checkAnswer('A')">A</div>
-        <div class="choice" id="B" onclick="checkAnswer('B')">B</div>
-        <div class="choice" id="C" onclick="checkAnswer('C')">C</div>
+<body>  
+  
+    <div id="gameHeader">TRIVIA GAME !</div>
+        <div id="container">
+            <div class="row" id="button-row">
+                <div class="text-center"><button class="btn btn-lg btn-dark" id="button" type="button">Click here to start game!</button></div>
+            </div>
+                     
+            <div class="row" id="quiz" style="display: none">
+                    <div id="question"></div>
+                    <div id="choices">
+                        <div class="choice" id="A" onclick="checkAnswer('A')">A</div>
+                        <div class="choice" id="B" onclick="checkAnswer('B')">B</div>
+                        <div class="choice" id="C" onclick="checkAnswer('C')">C</div>
+                        <div id="timer"></div>
+                    </div> 
+            </div> 
+            <div id="scoreContainer" style="display: none"></div>
         </div>
-
-        <div id="score" style="display:none"><img src="smile.png"><p>50%</p></div>
-        <!-- <div class="container" id="page">
+        
+        
+                    <!-- <div class="container" id="page">
             <div class="row" id="button-row">
                 <div class="text-center"><button class="btn btn-lg btn-dark" id="button" type="button">Click here to start game!</button></div>
             </div>
@@ -54,7 +55,7 @@
             <div class="wrongAnswer">Wrong answers</div>
         </div> -->
             
-        </div>
+        
 
     <script src="assets/javascript/app.js"></script> 
 </body>

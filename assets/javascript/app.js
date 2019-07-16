@@ -1,37 +1,13 @@
-// let start = document.getElementById("btn");
-// let game = document.getElementById("page");
-// let questionA = document.getElementById("question-row");
-// let imageForQuestion = document.getElementById("questionImg");
-// let answerA = document.getElementById("A");
-// let answerB = document.getElementById("B");
-// let answerC = document.getElementById("C");
-// let timer = document.getElementById("timer-row");
-// let answer = document.getElementById("answer");
-// let wrong = document.getElementById("wrong-row");
-// let correct = document.getElementById("correct-row")
-// let gameOver = document.getElementById("game-over-row");
-// var timeleft = 120;
-let start = document.getElementById("start");
+let start = document.getElementById("button");
 let quiz = document.getElementById("quiz");
-let qImg = document.getElementById("questionImage");
-let questions = document.getElementById("question");
-let counter = document.getElementById("counter");
-let timeGauge = document.getElementById("timeGauge");
+let question = document.getElementById("question");
+let timer = document.getElementById("timer");
 let choiceA = document.getElementById("A");
 let choiceB = document.getElementById("B");
 let choiceC = document.getElementById("C");
-let progess = document.getElementById("progress");
-let scoreContainer = document.getElementById("scoreContainer");
+let scoreDiv = document.getElementById("scoreContainer");
 
-
-// function hideScreen() {
-//     var x = document.getElementById("button");
-//     if (x.style.display === "none") {
-//       x.style.display = "block";
-//     } else {
-//       x.style.display = "none";
-// } 
-          let questions = [
+let questions = [
  
         {
                 question: "What kind of pets does Val have?",
@@ -42,86 +18,88 @@ let scoreContainer = document.getElementById("scoreContainer");
                 correct : "A"
         },
             {question : "Which Hawaiian island used to supply 75% of the pineapples in the world?",
-                
                 answerA : "Oahu",
+                imgSrc : "img/html.png",
                 answerB : "Waikiki",
                 answerC : "Lanai",
                 correct : "C"
             },
             {question : "Does Hawaii observe daylight savings?",
-               
                 answerA : "Yes",
+                imgSrc : "img/html.png",
                 answerB : "No",
                 answerC : "Sometimes",
                 correct : "B"
             },
             {question : "When someone from Hawaii says the word ma-ke, what does it mean?",
-              
+                imgSrc : "img/html.png",
                 answerA : "Tired",
                 answerB : "Dead",
                 answerC : "Single",
                 correct : "B"
             },
             {question : "What types of fruit trees are commonly found throughout Hawaii?",
-            
-                answerA : "Apple and Tangerine",
+            imgSrc : "img/html.png",
+            answerA : "Apple and Tangerine",
                 answerB : "Mango and Papaya",
                 answerC : "Coconut and Prune",
                 correct : "B"
             },
         ];     
-      
-// function askTheQuestion()  {
-//         let lastQuestionIndex = questions.length - 1;
-//         let currentQuestionIndex = 0;
-//             for (i = 0; i < questions.length -1; i++) {
-//                 let q = questions[currentQuestionIndex];
-                // questionA.innerHTML = "<p>" + q.question +"</p>";
-                // answerA.innerHTML = q.answerA;
-                // answerB.innerHTML = q.answerB;
-                // answerC.innerHTML = q.answerC;
-                
-document.getElementById("question-row").innerHTML = "<p>" + questionA.question + "</p>";
-        let    answerA.innerHTML = answerA;
-         let   answerB.innerHTML = answerB;
-        let     answerC.innerHTML = answerC;
-
-
-                if $(document).on("click", ".option" == questions[currentQuestionIndex].correct {
-                    correctanswer++
-                } 
+let lastQuestion = questions.length - 1;
+let runningQuestion = 0;
+let count = 0;
+let questionTime = 10;
+let TIMER;
+let score = 0;
         
-
-            };
-};
-
-            }
-            else () {
-                displayScore();
-            }
-            
-//         function checkAnswer(answer) {
-//             if (questions[currentQuestionIndex].correct == answer){
-//                 score++;
-//             };
-//             if(currentQuestionIndex < lastQuestionIndex) {
-//                 score.innerHTML = "<p>" + score + "<p>";
-//             };
-//         };
-$(document).on("click", "#button", function() {
-    askTheQuestion();
-    hideScreen();
-    startTimer ()
-  //   document.getElementById("startPage").style.visibility = "hidden";
-  //   document.getElementById("activeGamePage").style.visibility ="visible";
-    var downloadTimer = setInterval(function(){
-      document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
-      timeleft -= 1;
-      if(timeleft <= 0){
-        clearInterval(downloadTimer);
-        document.getElementById("countdown").innerHTML = "Finished !";
+  function renderQuestion(){
+    let q = questions[runningQuestion];
+    question.innerHTML = "<p>"+ q.question +"</p>";
+    choiceA.innerHTML = q.choiceA;
+    choiceB.innerHTML = q.choiceB;
+    choiceC.innerHTML = q.choiceC;
+  }
+  function renderCounter() {
+    if (count <= questionTime) {
+      count--;
+      timer.innerHTML = count;
+    } else {
+      count = 0;
+      if (runningQuestion < lastQuestion) {
+        runningQuestion++;
+        renderQuestion();
+      } else {
+        clearInterval(TIMER);
+        scoreRender();
       }
-    }, 1000);
-    });
-//         askTheQuestion();
-//         checkAnswer();
+    }
+  } 
+  function scoreRender() {
+    scoreDiv.style.display = "block";
+    scoreDiv.innerHTML = score;
+  }
+  function checkAnswer (answer) {
+    if (answer == questions[runningQuestion].correct){
+      score++;
+    }
+    }
+    count = 0;
+    if (runningQuestion < lastQuestion) {
+      runningQuestion++;
+      renderQuestion();
+    }
+  start.addEventListener("click", startQuiz);  
+
+  function startQuiz() {
+    start.style.display = "none";
+    renderQuestion();
+    quiz.style.display = "block";
+    renderCounter();
+    TIMER = setInterval(renderCounter,1000);
+    }
+
+
+     
+
+
