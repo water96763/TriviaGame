@@ -11,70 +11,83 @@ let questions = [
  
         {
                 question: "What kind of pets does Val have?",
-                imgSrc : "img/html.png",
+                
                 choiceA : "Turtles and Tortoises",
                 choiceB : "Finches and Parrots",
                 choiceC : "Cats and Dogs",
                 correct : "A"
         },
             {question : "Which Hawaiian island used to supply 75% of the pineapples in the world?",
-                answerA : "Oahu",
-                imgSrc : "img/html.png",
-                answerB : "Waikiki",
-                answerC : "Lanai",
+                choiceA : "Oahu",
+             
+                choiceB : "Waikiki",
+                choiceC : "Lanai",
                 correct : "C"
             },
             {question : "Does Hawaii observe daylight savings?",
-                answerA : "Yes",
-                imgSrc : "img/html.png",
-                answerB : "No",
-                answerC : "Sometimes",
+                choiceA : "Yes",
+               
+                choiceB : "No",
+                choiceC : "Sometimes",
                 correct : "B"
             },
             {question : "When someone from Hawaii says the word ma-ke, what does it mean?",
-                imgSrc : "img/html.png",
-                answerA : "Tired",
-                answerB : "Dead",
-                answerC : "Single",
+             
+                choiceA : "Tired",
+                choiceB : "Dead",
+                choiceC : "Single",
                 correct : "B"
             },
             {question : "What types of fruit trees are commonly found throughout Hawaii?",
-            imgSrc : "img/html.png",
-            answerA : "Apple and Tangerine",
-                answerB : "Mango and Papaya",
-                answerC : "Coconut and Prune",
+           
+                choiceA : "Apple and Tangerine",
+                choiceB : "Mango and Papaya",
+                choiceC : "Coconut and Prune",
                 correct : "B"
             },
         ];     
 let lastQuestion = questions.length - 1;
 let runningQuestion = 0;
-let count = 0;
-let questionTime = 10;
-let TIMER;
 let score = 0;
-        
+    
   function renderQuestion(){
     let q = questions[runningQuestion];
     question.innerHTML = "<p>"+ q.question +"</p>";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
+    choiceA.innerHTML = "<p>"+ q.choiceA +"</p>";
+    choiceB.innerHTML = "<p>"+ q.choiceB +"</p>";
+    choiceC.innerHTML = "<p>"+ q.choiceC +"</p>";
   }
-  function renderCounter() {
-    if (count <= questionTime) {
-      count--;
-      timer.innerHTML = count;
-    } else {
-      count = 0;
-      if (runningQuestion < lastQuestion) {
-        runningQuestion++;
-        renderQuestion();
-      } else {
-        clearInterval(TIMER);
-        scoreRender();
+  // function renderCounter() {
+  //   if (count <= questionTime) {
+  //     count--;
+  //     timer.innerHTML = count;
+  //   } else {
+  //     count = 0;
+  //     if (runningQuestion < lastQuestion) {
+  //       runningQuestion++;
+  //       renderQuestion();
+  //     } else {
+  //       clearInterval(TIMER);
+  //       scoreRender();
+  setInterval(startTimer() {count}, 1000);
+  function startTimer()  {
+    let count = 20;
+   
+      count = count--;
+      document.getElementById("timer").innerHTML= count;
+      if (count <= 0) { 
+        clearInterval(counter);
+          if (runningQuestion < lastQuestion) {
+            runningQuestion++;
+            renderQuestion(); 
+          }
+          else {
+            clearInterval(counter);
+            scoreRender();
+          }
       }
-    }
-  } 
+  }
+ 
   function scoreRender() {
     scoreDiv.style.display = "block";
     scoreDiv.innerHTML = score;
@@ -90,13 +103,14 @@ let score = 0;
       renderQuestion();
     }
   start.addEventListener("click", startQuiz);  
-
+ 
   function startQuiz() {
+    
     start.style.display = "none";
     renderQuestion();
     quiz.style.display = "block";
-    renderCounter();
-    TIMER = setInterval(renderCounter,1000);
+    startTimer();
+    
     }
 
 

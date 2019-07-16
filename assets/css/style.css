@@ -23,33 +23,35 @@
     text-align: center;
 }
 
-#game-over-row {
+#quiz {
     background-color: green;
+    text-align: center;
+
 
 }
 
-#timer-row {
+#question {
     background-color: red;
 
 }
 
-#question-row {
+#choices {
     background-color: pink;
     height: 450px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
     }
 
-#correct-row {
+#timer {
     background-color: orange;
     text-align: center;
 }
-#question-row {
+#scoreContainer {
     text-align: center;
     background-color: aqua;
 }
-#wrong-row {
-    background-color: blue;
-    text-align: center;
-}
+
 
 /* #page {
     vertical-align: middle;
