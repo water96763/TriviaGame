@@ -13,25 +13,21 @@
 <body>  
   
     <div id="gameHeader">TRIVIA GAME !</div>
-        <div id="container">
+        <div id="container text-center">
             <div class="row text-center" id="button-row">
                 <button class="btn btn-lg btn-dark" id="button" type="button">Click here to start game!</button></div>
-            </div>
-                     
-            <div class="row" id="quiz" style="display: none">
-                    <div id="question"></div>
-                    <!-- <div id="choices"> -->
-                        <button class=" row answer btn btn-sm btn-dark" id="A" type="button">A</button></div>
-                    <!-- </div> <div class="answer" id="A" onclick="checkAnswer('A')">A</div> -->
-                    <button class="row answer btn btn-sm btn-dark" id="B" type="button">B</button></div>
-                <!-- </div> <div class="answer" id="B" onclick="checkAnswer('B')">B</div> -->
-                <button class="row answer btn btn-sm btn-dark" id="C" type="button">C</button></div>
-            <!-- </div>   <div class="answer" id="C" onclick="checkAnswer('C')">C</div> -->
-                        <span id="timer">Time left: </span>
-                    </div> 
-            </div> 
-            <div id="scoreContainer" style="display: none"></div>
         </div>
+                     
+        <div class="container" id="quiz" style="display: none">
+                <div id="question"></div>
+                <div><button class="row answer btn btn-lg btn-dark" id="A" type="button">A</button></div>
+                <div><button class="row answer btn btn-lg btn-dark" id="B" type="button">B</button></div>
+                <div><button class="row answer btn btn-lg btn-dark" id="C" type="button">C</button></div>
+                <span id="timer">Time left: </span>
+        </div> 
+   
+            <div id="scoreContainer" style="display: none"></div>
+        
         
         
                     <!-- <div class="container" id="page">
