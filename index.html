@@ -14,17 +14,20 @@
   
     <div id="gameHeader">TRIVIA GAME !</div>
         <div id="container">
-            <div class="row" id="button-row">
-                <div class="text-center"><button class="btn btn-lg btn-dark" id="button" type="button">Click here to start game!</button></div>
+            <div class="row text-center" id="button-row">
+                <button class="btn btn-lg btn-dark" id="button" type="button">Click here to start game!</button></div>
             </div>
                      
             <div class="row" id="quiz" style="display: none">
                     <div id="question"></div>
                     <!-- <div id="choices"> -->
-                        <div class="choice" id="A" onclick="checkAnswer('A')">A</div>
-                        <div class="choice" id="B" onclick="checkAnswer('B')">B</div>
-                        <div class="choice" id="C" onclick="checkAnswer('C')">C</div>
-                        <span id="timer"></span>
+                        <button class=" row answer btn btn-sm btn-dark" id="A" type="button">A</button></div>
+                    <!-- </div> <div class="answer" id="A" onclick="checkAnswer('A')">A</div> -->
+                    <button class="row answer btn btn-sm btn-dark" id="B" type="button">B</button></div>
+                <!-- </div> <div class="answer" id="B" onclick="checkAnswer('B')">B</div> -->
+                <button class="row answer btn btn-sm btn-dark" id="C" type="button">C</button></div>
+            <!-- </div>   <div class="answer" id="C" onclick="checkAnswer('C')">C</div> -->
+                        <span id="timer">Time left: </span>
                     </div> 
             </div> 
             <div id="scoreContainer" style="display: none"></div>
@@ -43,7 +46,7 @@
             <div class="row" id="question-row">Question:</div>
             <label class="option"><input type="radio" name="option" value="1" />1<span id="A"></span></label>
             <label class="option"><input type="radio" name="option" value="2" />2<span id="B"></span></label>
-            <label class="option"><input type="radio" name="option" value="2" />3<span id="C"></span></label>
+            <label class="option"><input type="radio" name="option" value="3" />3<span id="C"></span></label>
             <div class="row" id="answer"></div>
         </div>
         
