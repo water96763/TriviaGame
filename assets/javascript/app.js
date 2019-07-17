@@ -65,33 +65,38 @@ let score = 0;
   //     count = 0;
   //     if (runningQuestion < lastQuestion) {
   //       runningQuestion++;
-  //       renderQuestion();
   //     } else {
   //       clearInterval(TIMER);
   //       scoreRender();
-  setInterval(startTimer() {count}, 1000);
+  let countdown = setInterval(startTimer, 1000);
+  let count = 20;
+  
   function startTimer()  {
-    let count = 20;
-   
-      count = count--;
-      document.getElementById("timer").innerHTML= count;
-      if (count <= 0) { 
-        clearInterval(counter);
-          if (runningQuestion < lastQuestion) {
-            runningQuestion++;
-            renderQuestion(); 
-          }
-          else {
-            clearInterval(counter);
-            scoreRender();
-          }
+    // let timer = select("#timer");
+    timer.innerHTML= ("Time left:" + count);
+    // timer.html(timeLeft - counter);
+    if (count <= 20) { 
+      count -= 1;
+      timer.innerHTML= ("Time left:" + count)
+    } else {
+      count = 0;
+       clearInterval(counter);
+        scoreRender();
       }
   }
+    
+
  
   function scoreRender() {
     scoreDiv.style.display = "block";
     scoreDiv.innerHTML = score;
   }
+
+  $(".answer").click(function() {
+    checkAnswer();
+  });
+ 
+  
   function checkAnswer (answer) {
     if (answer == questions[runningQuestion].correct){
       score++;
@@ -102,7 +107,9 @@ let score = 0;
       runningQuestion++;
       renderQuestion();
     }
-  start.addEventListener("click", startQuiz);  
+  
+  
+    start.addEventListener("click", startQuiz);  
  
   function startQuiz() {
     
