@@ -10,12 +10,11 @@ body {
     font-weight: bolder;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: greenyellow;
+    color: white;
 }
 
 #button-row {
- 
-   
+    text-align: center;
 }
 
 
@@ -26,6 +25,14 @@ body {
     font-size: 20px;
 }
 
+#other { 
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    position: fixed;
+}
+
 #question {
     background-color: rgb(42, 212, 224);
     font-family: Arial, Helvetica, sans-serif;
@@ -34,20 +41,18 @@ body {
     padding-top: 30px;
   }
 
-#choices {
-    background-color: pink;
-    height: 450px;
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    }
 
-#timer {
-    /* background-color: orange; */
-    width: 50px;
-    height: 50px;
-    text-align: center;
+#submit {
+ background-color: rgb(138, 15, 35); 
+    width: 100px;
+    height: 100px;
+
     padding: 20px;
+    text: black;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
 }
 #scoreContainer {
     text-align: center;
